@@ -1,30 +1,68 @@
-// memory 
+// 
 const Memory2 = document.getElementById('16GBmemory')
 const Memory1 = document.getElementById('8GBmemory')
 
 const MemoryCost = document.getElementById('memoryCost')
+const StorageCost = document.getElementById('storageCost')
+const dellyvaryamount = document.getElementById('dellyvary')
+const best =document.getElementById('best-price')
 
 const totalPrice = document.getElementById('totalPrice')
-
+const finalPrice = document.getElementById('final-price')
+// funtion calculation -----
 function momoryTotal () {
-const memoryCharge = Number( MemoryCost.innerText);
+const bestPrice =Number(best.innerText)
+const memoryCharge = Number(MemoryCost.innerText);
+const storageCharge = Number(StorageCost.innerText)
+const vellyvariCharge = Number(  dellyvaryamount.innerText)
 
+const TotalPrice = memoryCharge + storageCharge + vellyvariCharge + bestPrice;
+totalPrice.innerText = TotalPrice;
 
-totalPrice.innerText = memoryCharge + parseInt( totalPrice.innerText);
+const allTotal = parseInt(totalPrice.innerText)  + parseInt(finalPrice.innerText) 
+console.log(allTotal)
+// finalCost.innerText = TotalPrice;
 
 }
+//  promo ----->
+function finelTotal (){
+    const bestPrice =Number(best.innerText)
+const memoryCharge = Number(MemoryCost.innerText);
+const storageCharge = Number(StorageCost.innerText)
+const dellyvariCharge = Number(dellyvaryamount.innerText)
+
+let promoInput = document.getElementById('promo-input')
+let promoInputValue = promoInput.value;
+promoInput.value= '';
+if( promoInputValue == 'stevekaku'){
+const discount =( bestPrice + memoryCharge + storageCharge + dellyvariCharge) * 0.2;
+totalPrice.innerText = ( bestPrice + memoryCharge + storageCharge + dellyvariCharge) - discount;
+}
+else{
+    totalPrice.innerText = bestPrice + memoryCharge + storageCharge + dellyvariCharge; 
+}
+
+return totalPrice.innerText;
+
+}
+finelTotal ()
+
+
+// click items ----->
 
 Memory2.addEventListener('click' , function () {
 
     MemoryCost.innerText = '180'
    
     momoryTotal ()
+    finelTotal ()
 });
 Memory1.addEventListener('click' , function () {
 
     MemoryCost.innerText = '0'
    
     momoryTotal ()
+    finelTotal ()
 });
 
 // storage ----
@@ -41,20 +79,24 @@ const  storage1 = document.getElementById('storage256')
 const  storage2 = document.getElementById('storage512')
 const  storage3 = document.getElementById('storage1tb')
 
-const StorageCost = document.getElementById('storageCost')
+
 
 
 storage1.addEventListener('click' , function () {
     StorageCost.innerText = '0'
-    storageTotal()
+    momoryTotal ()
+    finelTotal ()
 })
 storage2.addEventListener('click' , function () {
     StorageCost.innerText = '100'
-    storageTotal()
+    momoryTotal ()
+    finelTotal ()
 })
 storage3.addEventListener('click' , function () {
     StorageCost.innerText = '180'
-    storageTotal()
+
+    momoryTotal ()
+    finelTotal ()
 })
 
 
@@ -63,64 +105,27 @@ storage3.addEventListener('click' , function () {
 
 const freeDelly = document.getElementById('freeDellivery')
 const freeDelly20 = document.getElementById('dellivery20')
-const dellyvaryamount = document.getElementById('dellyvary')
-
-
-
-function dellyveryCharge () {
-    const delivaryCharge = Number(dellyvaryamount.innerText)
-    const storageCharge = Number(StorageCost.innerText);
-    const memoryCharge = Number( MemoryCost.innerText);
-   
-    newAllPrice =  memoryCharge  + storageCharge + delivaryCharge;
-    totalPrice.innerText = + newAllPrice;
-}
-
-
 
 
 freeDelly.addEventListener('click' ,function () {
     dellyvaryamount.innerText = '0'
-    dellyveryCharge ()
+    momoryTotal ()
+    finelTotal ()
 })
 freeDelly20.addEventListener('click' ,function () {
   dellyvaryamount.innerText = '20'
-  dellyveryCharge ()
+  momoryTotal ()
+  finelTotal ()
+})
+
+
+document.getElementById('promo-bottom').addEventListener('click', function () {
+    finelTotal ()
+
 })
 
 
 
-
-// promo 
-
-document.getElementById('promo-bottom').addEventListener(
-    'click', function () {
-
-        console.log('tik ase')
-        promo()
-    }
-);
-
-
-
-function promo () {
-
-let previousTotalInput = document.getElementById('totalPrice');
-let previousTotal = parseInt(previousTotalInput.innerText);
-const finalCost = document.getElementById('final-price');
-
-
-let promoInput = document.getElementById('promo-input');
-let  promoInputValue = promoInput.value; 
-if(promoInputValue == 'stevekaku'){
-    const discount = previousTotal * 0.2;
-    const newTotalprice = parseInt(previousTotal - discount);
-    const newTotal = previousTotalInput.innerText = newTotalprice;
-    finalCost.innerText = newTotal;
-   
-}
-promoInput.value = '';
-}
 
 
 

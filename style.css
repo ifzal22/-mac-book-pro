@@ -1,0 +1,13 @@
+.image{
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin-left: 300px;
+}
+.hr{
+background-color: black;
+border-bottom: black;
+width:50%;
+text-align:left;
+margin-left:0
+}

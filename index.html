@@ -36,20 +36,21 @@
 
     <div class="mt-10">
         <p class="font-bold mt-10">Storge</p>
-    <button  class=" p-2 border border-gray-200 shadow
+    <button id="storage256"  class=" p-2 border border-gray-200 shadow
      hover:shadow-lg rounded selected">256GB SSD storage</button>
-    <button  class=" p-2 border border-gray-200
+    <button id="storage512" class=" p-2 border border-gray-200
      shadow hover:shadow-lg rounded selected">512GB SSD storage</button>
-    <button  class=" p-2 border border-gray-200
+    <button id="storage1tb"  class=" p-2 border border-gray-200
      shadow hover:shadow-lg rounded selected">1TB SSD storage</button>
 </div>
 <!-- DELIVARY  -->
 
     <div class="mt-10">
         <p class="font-bold mt-10">Choose your dellivery option</p>
-    <button  class=" p-2 border border-gray-200 shadow 
+    <button  id="freeDellivery" class=" p-2 border border-gray-200 shadow 
     hover:shadow-lg rounded selected">Friday,Aug 25 FREE prime Delivery</button>
-    <button  class=" p-2 border border-gray-200 
+
+    <button  id="dellivery20" class=" p-2 border border-gray-200 
     shadow hover:shadow-lg rounded selected">Friday, Aug 22 Dellivery charge $20</button>
 </div>
 
@@ -65,10 +66,10 @@
              id="memoryCost">0</span> </span> </p>
 
     <p class="font-bold mt-3 border-b-2 w-80  flex justify-between">Extra Storage Cost
-         <span class="">$<span id="">0</span> </span> </p>
+         <span class="">$<span id="storageCost">0</span> </span> </p>
 
     <p class="font-bold mt-3 border-b-2 w-80 flex justify-between">Dellyvary Charge
-         <span class="">$<span id="">0</span> </span> </p>
+         <span class="">$<span id="dellyvary">0</span> </span> </p>
 
  <hr class="hr mt-8  p-0\.5 border-black	">
 
@@ -77,9 +78,9 @@
 
 <div class="mt-10">
     <span>Add Pomo code</span><br>
-    <input class="border py-2" type="text">
+    <input id="promo-input" class="border py-2" type="text">
 
-    <button  class="p-2 border border-gray-200 shadow hover:shadow-lg rounded selected bg-red-500 hover:bg-red-700  text-white" > Apply
+    <button  id="promo-bottom" class="p-2 border border-gray-200 shadow hover:shadow-lg rounded selected bg-red-500 hover:bg-red-700  text-white" > Apply
        </button>
 </div>
 
@@ -89,7 +90,7 @@
 <div class="mt-10 mx-auto justify-end ">
     <!-- <div class="py-1 p-10 border-b-4"></div> -->
     <hr class=" mt-8  p-0\.5 border-black justify-center mr-16">
-    <p class="text-5xl mt-8   w-100 flex justify-between"> <span> Total price:$<span>1299</span> </span>
+    <p class="text-5xl mt-8   w-100 flex justify-between"> <span> Total price:$<span id="final-price">1299</span> </span>
          </p>
         </div>
     </div>

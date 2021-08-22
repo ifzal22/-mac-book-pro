@@ -17,10 +17,12 @@ const storageCharge = Number(StorageCost.innerText)
 const vellyvariCharge = Number(  dellyvaryamount.innerText)
 
 const TotalPrice = memoryCharge + storageCharge + vellyvariCharge + bestPrice;
-totalPrice.innerText = TotalPrice;
+totalPrice.innerText = TotalPrice ;
 
-const allTotal = parseInt(totalPrice.innerText)  + parseInt(finalPrice.innerText) 
-console.log(allTotal)
+
+const finalTotalPrice =  memoryCharge + storageCharge + vellyvariCharge + bestPrice;
+finalPrice.innerText = finalTotalPrice;
+
 // finalCost.innerText = TotalPrice;
 
 }
@@ -37,12 +39,19 @@ promoInput.value= '';
 if( promoInputValue == 'stevekaku'){
 const discount =( bestPrice + memoryCharge + storageCharge + dellyvariCharge) * 0.2;
 totalPrice.innerText = ( bestPrice + memoryCharge + storageCharge + dellyvariCharge) - discount;
+finalPrice.innerText =  ( bestPrice + memoryCharge + storageCharge + dellyvariCharge) - discount;
+
+
+// const discountfinal = ( memoryCharge + storageCharge + vellyvariCharge + bestPrice) * 0.2;
+// finalPrice.innerText  = ( memoryCharge + storageCharge + vellyvariCharge + bestPrice) - discountfinal;
 }
 else{
     totalPrice.innerText = bestPrice + memoryCharge + storageCharge + dellyvariCharge; 
+    finalPrice.innerText = bestPrice + memoryCharge + storageCharge + dellyvariCharge; 
 }
 
-return totalPrice.innerText;
+return totalPrice.innerText , finalPrice.innerText;
+
 
 }
 finelTotal ()
